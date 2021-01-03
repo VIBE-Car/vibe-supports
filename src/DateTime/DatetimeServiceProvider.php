@@ -1,6 +1,6 @@
 <?php
 
-namespace Vibe\Supports\VibeDateTime;
+namespace Vibe\Supports\DateTime;
 
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\ServiceProvider;
