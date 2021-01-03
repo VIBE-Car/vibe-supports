@@ -32,10 +32,12 @@ class DateTimeUtil
      * @param Carbon|VibeCarbon $datetime
      * @param string $toTimezone
      *
-     * @return Carbon|VibeCarbon
+     * @return VibeCarbon
      */
-    public static function transformToTimezone(Carbon $datetime, string $toTimezone = '+00:00'): Carbon
+    public static function transformToTimezone(Carbon $datetime, string $toTimezone = '+00:00'): VibeCarbon
     {
-        return $datetime->setTimezone(CarbonTimeZone::create($toTimezone)->toOffsetName());
+        $output = VibeCarbon::instance($datetime);
+
+        return $output->setTimezone(CarbonTimeZone::create($toTimezone)->toOffsetName());
     }
 }
