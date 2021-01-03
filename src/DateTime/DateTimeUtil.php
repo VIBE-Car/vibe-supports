@@ -18,7 +18,7 @@ class DateTimeUtil
      */
     public static function createUtcDateTime(string $datetimeString, string $fromTimezone): Carbon
     {
-        return Carbon::createFromFormat(Config::get('vibe.datetime_input_format'), $datetimeString, CarbonTimeZone::create($fromTimezone)->toOffsetName());
+        return Carbon::createFromFormat(Config::get('vibe_supports.datetime_input_format'), $datetimeString, CarbonTimeZone::create($fromTimezone)->toOffsetName());
     }
 
     /**

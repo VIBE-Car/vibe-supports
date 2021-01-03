@@ -11,4 +11,9 @@ class DatetimeServiceProvider extends ServiceProvider
     {
         Date::useClass(VibeCarbon::class);
     }
+
+    public function register()
+    {
+        $this->mergeConfigFrom(dirname(__DIR__) . '/config/vibe_supports.php', 'vibe_supports');
+    }
 }
