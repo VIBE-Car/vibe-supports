@@ -1,5 +1,5 @@
 {
-    "name": "vibe/datetime",
+    "name": "vibe/supports",
     "description": "DateTimeUtil for VIBE projects",
     "type": "library",
     "require": {
