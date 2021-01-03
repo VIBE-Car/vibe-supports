@@ -17,7 +17,7 @@ class DateTimeUtil
      *
      * @return Carbon|VibeCarbon
      */
-    public static function createUtcDateTime(string $datetimeString, string $fromTimezone, string $fromFormat = null): VibeCarbon
+    public static function createUtcDateTime(string $datetimeString, string $fromTimezone, string $fromFormat = null): Carbon
     {
         if (empty($fromFormat)) {
             $fromFormat = Config::get('vibe_supports.datetime_input_format');
@@ -32,9 +32,9 @@ class DateTimeUtil
      * @param Carbon|VibeCarbon $datetime
      * @param string $toTimezone
      *
-     * @return VibeCarbon
+     * @return Carbon|VibeCarbon
      */
-    public static function transformToTimezone(Carbon $datetime, string $toTimezone = '+00:00'): VibeCarbon
+    public static function transformToTimezone(Carbon $datetime, string $toTimezone = '+00:00'): Carbon
     {
         return $datetime->setTimezone(CarbonTimeZone::create($toTimezone)->toOffsetName());
     }
