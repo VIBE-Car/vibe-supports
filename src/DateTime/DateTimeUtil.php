@@ -23,18 +23,18 @@ class DateTimeUtil
             $fromFormat = Config::get('vibe_supports.datetime_input_format');
         }
 
-        return Carbon::createFromFormat($fromFormat, $datetimeString, CarbonTimeZone::create($fromTimezone)->toOffsetName());
+        return VibeCarbon::createFromFormat($fromFormat, $datetimeString, CarbonTimeZone::create($fromTimezone)->toOffsetName());
     }
 
     /**
      * Convert datetime to timezone
      *
-     * @param Carbon $datetime
+     * @param VibeCarbon $datetime
      * @param string $toTimezone
      *
-     * @return Carbon
+     * @return VibeCarbon
      */
-    public static function transformToTimezone(Carbon $datetime, string $toTimezone = '+00:00'): Carbon
+    public static function transformToTimezone(VibeCarbon $datetime, string $toTimezone = '+00:00'): VibeCarbon
     {
         return $datetime->setTimezone(CarbonTimeZone::create($toTimezone)->toOffsetName());
     }
