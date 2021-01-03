@@ -2,9 +2,9 @@
 
 namespace Vibe\Supports\DateTime;
 
-
 use Carbon\Carbon;
 use Carbon\CarbonTimeZone;
+use Illuminate\Support\Facades\Config;
 
 class DateTimeUtil
 {
@@ -18,7 +18,7 @@ class DateTimeUtil
      */
     public static function createUtcDateTime(string $datetimeString, string $fromTimezone): Carbon
     {
-        return Carbon::createFromFormat(config('vibe.datetime_input_format'), $datetimeString, CarbonTimeZone::create($fromTimezone)->toOffsetName());
+        return Carbon::createFromFormat(Config::get('vibe.datetime_input_format'), $datetimeString, CarbonTimeZone::create($fromTimezone)->toOffsetName());
     }
 
     /**
