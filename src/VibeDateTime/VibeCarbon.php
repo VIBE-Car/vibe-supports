@@ -1,6 +1,6 @@
 <?php
 
-namespace Vibe\Supports\DateTime;
+namespace Vibe\Supports\VibeDateTime;
 
 use Carbon\Carbon;
 
