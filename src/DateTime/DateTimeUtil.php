@@ -13,12 +13,17 @@ class DateTimeUtil
      *
      * @param string $datetimeString
      * @param string $fromTimezone
+     * @param string|null $fromFormat
      *
      * @return Carbon
      */
-    public static function createUtcDateTime(string $datetimeString, string $fromTimezone): Carbon
+    public static function createUtcDateTime(string $datetimeString, string $fromTimezone, string $fromFormat = null): Carbon
     {
-        return Carbon::createFromFormat(Config::get('vibe_supports.datetime_input_format'), $datetimeString, CarbonTimeZone::create($fromTimezone)->toOffsetName());
+        if (empty($fromFormat)) {
+            $fromFormat = Config::get('vibe_supports.datetime_input_format');
+        }
+
+        return Carbon::createFromFormat($fromFormat, $datetimeString, CarbonTimeZone::create($fromTimezone)->toOffsetName());
     }
 
     /**
