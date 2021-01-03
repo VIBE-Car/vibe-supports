@@ -2,6 +2,7 @@
     "name": "vibe/supports",
     "description": "DateTimeUtil for VIBE projects",
     "type": "library",
+    "version": "1.0.0",
     "require": {
         "illuminate/support": "8.*"
     },
