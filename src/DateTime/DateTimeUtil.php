@@ -29,12 +29,12 @@ class DateTimeUtil
     /**
      * Convert datetime to timezone
      *
-     * @param VibeCarbon $datetime
+     * @param Carbon|VibeCarbon $datetime
      * @param string $toTimezone
      *
      * @return VibeCarbon
      */
-    public static function transformToTimezone(VibeCarbon $datetime, string $toTimezone = '+00:00'): VibeCarbon
+    public static function transformToTimezone(Carbon $datetime, string $toTimezone = '+00:00'): VibeCarbon
     {
         return $datetime->setTimezone(CarbonTimeZone::create($toTimezone)->toOffsetName());
     }
