@@ -15,9 +15,9 @@ class DateTimeUtil
      * @param string $fromTimezone
      * @param string|null $fromFormat
      *
-     * @return Carbon
+     * @return Carbon|VibeCarbon
      */
-    public static function createUtcDateTime(string $datetimeString, string $fromTimezone, string $fromFormat = null): Carbon
+    public static function createUtcDateTime(string $datetimeString, string $fromTimezone, string $fromFormat = null): VibeCarbon
     {
         if (empty($fromFormat)) {
             $fromFormat = Config::get('vibe_supports.datetime_input_format');
