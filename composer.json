@@ -1,0 +1,19 @@
+{
+    "name": "vibe/datetime",
+    "description": "DateTimeUtil for VIBE projects",
+    "type": "library",
+    "require": {
+        "../../../../vendor/illuminate/support": "8.*"
+    },
+    "authors": [
+        {
+            "name": "vibe-dev",
+            "email": "vibe.dev@nfq.asia"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Vibe\\Supports\\": "src/"
+        }
+    }
+}
